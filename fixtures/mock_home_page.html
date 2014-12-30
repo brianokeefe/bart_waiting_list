@@ -1,0 +1,24 @@
+<html>
+
+<head>
+  <title>BART</title>
+</head>
+
+<body id="home">
+  <div id="container">
+    <form action="/bart/users/login/" method="post" id="site-login">
+      <div style='display:none'>
+        <input type='hidden' name='csrfmiddlewaretoken' value='fake-value' />
+      </div>
+      <div>
+        <input class="input" type="text" name="username" id="username" placeholder="Username">
+        <input class="input" type="password" name="password" id="password" placeholder="Password">
+      </div>
+      <div>
+        <input class="input" id="submit" type="submit" name="login" value="Login" />
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
