@@ -1,6 +1,8 @@
 require 'mechanize'
 require 'yaml'
 
+STATIONS_FILE = File.expand_path "#{__FILE__}/../../stations.yaml"
+
 HOME_URL = 'https://www.select-a-spot.com/bart/'
 WAITING_LIST_URL = 'https://www.select-a-spot.com/bart/waiting_lists/'
 
@@ -50,7 +52,7 @@ class BartWaitingList
   def get_station_name(station)
     station_names = {}
 
-    YAML.load_file('stations.yaml').each do |key, value|
+    YAML.load_file(STATIONS_FILE).each do |key, value|
       station_names[key.to_sym] = value
     end
 
