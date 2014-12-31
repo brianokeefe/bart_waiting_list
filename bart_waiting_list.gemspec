@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'bart_waiting_list'
-  spec.version       = '0.0.2'
+  spec.version       = '0.0.3'
   spec.authors       = ["Brian O'Keefe"]
   spec.email         = ['brian@bokstuff.com']
   spec.summary       = %q{Get data from the BART select-a-spot waiting list page}
