@@ -9,19 +9,15 @@ class BartWaitingList
   attr_reader :page
 
   def initialize(email, password)
-    @page = get_waiting_list_page(email, password)
+    @page = get_waiting_list_page email, password
   end
 
   def get_waiting_list_position(station)
     station_name = get_station_name station
+    regexp = %r{position (?<position>\d+)[a-zA-Z<>/"= ]+at <span class="bold">#{station_name}<\/span>}
+    match = @page.body.match regexp
 
-    /currently at <span class="bold">position (\d+)<\/span> on the waiting list for <span class="bold">Monthly Reserved<\/span> at <span class="bold">#{station_name}<\/span>/.match @page.body
-
-    if $1.nil?
-      $1
-    else
-      $1.to_i
-    end
+    Integer match[:position] rescue nil
   end
 
   private
@@ -48,7 +44,7 @@ class BartWaitingList
     form.submit
 
     # now that we're logged in, return the waiting list page
-    agent.get(WAITING_LIST_URL)
+    agent.get WAITING_LIST_URL
   end
 
   def get_station_name(station)
