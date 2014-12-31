@@ -15,7 +15,7 @@ class BartWaitingList
   def get_waiting_list_position(station)
     station_name = get_station_name station
 
-    /currently at <span class="bold">position (\d+)<\/span> on the waiting list for <span class="bold">Monthly Reserved<\/span> at <span class="bold">#{station_name}<\/span>/.match @page
+    /currently at <span class="bold">position (\d+)<\/span> on the waiting list for <span class="bold">Monthly Reserved<\/span> at <span class="bold">#{station_name}<\/span>/.match @page.body
 
     if $1.nil?
       $1
@@ -48,7 +48,7 @@ class BartWaitingList
     form.submit
 
     # now that we're logged in, return the waiting list page
-    agent.get(WAITING_LIST_URL).body
+    agent.get(WAITING_LIST_URL)
   end
 
   def get_station_name(station)

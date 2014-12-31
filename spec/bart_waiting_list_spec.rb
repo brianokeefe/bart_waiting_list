@@ -8,8 +8,8 @@ describe BartWaitingList do
       expect(subject).to be_an_instance_of BartWaitingList
     end
 
-    it 'should contain the source for the waiting list page' do
-      expect(subject.page).to be_an_instance_of String
+    it 'should store the waiting list page' do
+      expect(subject.page).to be_an_instance_of Mechanize::Page
     end
   end
 
