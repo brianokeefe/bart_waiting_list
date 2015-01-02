@@ -1,4 +1,6 @@
 # BartWaitingList
+[![Gem Version](https://badge.fury.io/rb/bart_waiting_list.svg)](http://badge.fury.io/rb/bart_waiting_list)
+[![Code Climate](https://codeclimate.com/github/brianokeefe/bart_waiting_list/badges/gpa.svg)](https://codeclimate.com/github/brianokeefe/bart_waiting_list)
 
 Retrieves your BART parking waiting list position from select-a-spot.com
 
